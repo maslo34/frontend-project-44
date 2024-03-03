@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
-import userName from '../src/cli.js'
+import userName from '../src/cli.js';
+import _ from 'lodash';
 
 
 
@@ -7,9 +8,9 @@ import userName from '../src/cli.js'
 
 
 export default () => {
-    const joi = userName();
+    const joi = userName();  //Получение имени пользователя
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
-    const arrChar = [15, 6, 7]
+    const arrChar =[_.random(20), _.random(20), _.random(20)];
     let countAnswer = 0;
 
     for (const item of arrChar) {
@@ -23,9 +24,9 @@ export default () => {
             console.log('Correct!')
             countAnswer +=1
         } else {
-            console.log(`'${number1}' is wrong answer ;(. Correct answer was ${result}.`)
+            console.log(`'${number1}' is wrong answer ;(. Correct answer was '${result}'.`)
             break
-        };
+        }
         if (countAnswer === 3) {
             return console.log(`Congratulations, ${joi}!`);
         }
@@ -34,3 +35,6 @@ export default () => {
 };
 
 
+//Записать аскинему
+//Числа должны быть рандомными
+//Переработать логику
