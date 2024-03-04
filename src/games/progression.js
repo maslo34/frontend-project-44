@@ -3,7 +3,7 @@ import { logic } from '../index.js';
 import greetings from './cli.js';
 
 const arrProgression = (lergthProgression, stepSize) => {
-    let answer;
+    let answer = 0;
     const randomPass =  _.random(lergthProgression);
     let numberProgression = _.random(100)
     const progression = [numberProgression];
