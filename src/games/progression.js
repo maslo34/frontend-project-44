@@ -4,7 +4,7 @@ import greetings from './cli.js';
 
 const arrProgression = (lergthProgression, stepSize) => {
     let answer = 0;
-    const randomPass =  _.random(lergthProgression);
+    const randomPass =  _.random(lergthProgression - 2);
     let numberProgression = _.random(100)
     const progression = [numberProgression];
     for (let i = 0; i < lergthProgression; i += 1) {
