@@ -5,6 +5,9 @@ import greetings from './cli.js';
 const nod = (firstNumber, secondNumber) => {
     let result = 0
     const maxNumber = Math.max(firstNumber, secondNumber)
+    if (Math.min(firstNumber, secondNumber) === 0 || firstNumber === secondNumber ) {
+        return result = maxNumber;
+    }
     for (let i = 0; i < maxNumber; i += 1) {
         if (firstNumber % i === 0 && secondNumber % i === 0) {
             result = i;
@@ -19,8 +22,8 @@ export default () => {
     let count = 0;
     for ( let i = 0; i < 3; i +=1) {
 
-        const firstNumber = _.random(1, 100);
-        const secondNumber = _.random(1, 100);
+        const firstNumber = _.random(100);
+        const secondNumber = _.random(100);
         const ques = `${firstNumber} ${secondNumber}`;
         const result = nod(firstNumber, secondNumber);
         const userAnsw = logic(ques, result);
