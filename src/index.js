@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 
 export const logic = (ques, result) => {
     console.log(`Question: ${ques}`);
-    const userAnsw = readlineSync.question('Your anser: ');
+    const userAnsw = readlineSync.question('Your answer: ');
     if (userAnsw == result) {
         return true;
     } else {
