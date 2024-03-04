@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
 
-export const logik = (ques, result) => {
+export const logic = (ques, result) => {
     console.log(`Question: ${ques}`);
-    const userAnsw = readlineSync.question('Your anser ');
+    const userAnsw = readlineSync.question('Your anser: ');
     if (userAnsw == result) {
         return true;
     } else {

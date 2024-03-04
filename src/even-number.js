@@ -1,6 +1,7 @@
-import readlineSync from 'readline-sync';
-import userName from '../src/cli.js';
+
+import greetings from '../src/cli.js';
 import _ from 'lodash';
+import { logic } from './index.js';
 
 
 
@@ -8,13 +9,37 @@ import _ from 'lodash';
 
 
 export default () => {
-    const joi = userName();  //Получение имени пользователя
+    const userName = greetings();  //Получение имени пользователя
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
-    const arrChar =[_.random(20), _.random(20), _.random(20)];
+    //const arrChar =[_.random(20), _.random(20), _.random(20)];
     let countAnswer = 0;
 
-    for (const item of arrChar) {
-        console.log(`Question: ${item}`);
+    for (let i = 0; i < 3; i += 1) {
+        const randomNumber = _.random(100);
+        let result = 'no';
+        if (randomNumber % 2 === 0) {
+            result = 'yes';
+        }
+        const userAnsw = logic(randomNumber, result);
+        if ( userAnsw === true) {
+            countAnswer += 1;
+            console.log('Correct!');
+        } else {
+            break;
+        }
+    }
+    return countAnswer === 3? console.log(`Congratulations, ${userName}!`): console.log(`Let's try again, ${userName}!`);
+    
+};
+
+
+//Записать аскинему
+//Числа должны быть рандомными
+//Переработать логику
+
+
+/*
+console.log(`Question: ${item}`);
         const number1 = readlineSync.question('Your answer: ');
         let result = 'no';
         if (item % 2 === 0) {
@@ -32,9 +57,4 @@ export default () => {
         }
     }
     return console.log(`Let's try again, ${joi}!`);
-};
-
-
-//Записать аскинему
-//Числа должны быть рандомными
-//Переработать логику
+*/

@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { logik } from './index.js';
+import { logic } from './index.js';
 import greetings from './cli.js';
 
 
@@ -8,8 +8,7 @@ const matSymbol = ['*', '-', '+',];
 const calsSymbol = (number1, number2, char) => {
     if (matSymbol[char] === '*') {
         return number1 * number2;
-    }
-    if (matSymbol[char] === '-') {
+    } else if (matSymbol[char] === '-') {
         return number1 - number2;
     } else {
         return number1 + number2;
@@ -22,11 +21,11 @@ export default () => {
     let count = 0;
     for ( let i = 0; i < 3; i += 1) {
         const firstNumber = _.random(100);
-        const secondNumber = _.random(100);
+        const secondNumber = _.random(20);
         const randomSymbol = _.random(2);
         const ques = `${firstNumber} ${matSymbol[randomSymbol]} ${secondNumber}`;
         const result = calsSymbol(firstNumber,secondNumber, randomSymbol);
-        const userAnsw = logik(ques, result);
+        const userAnsw = logic(ques, result);
         if ( userAnsw === true) {
             count += 1;
             console.log('Correct!');
@@ -34,6 +33,6 @@ export default () => {
             break;
         }
     }
-    return count === 3? console.log(`Congratulations, ${userName}!`): console.log(`Let's try again,  ${userName}!`);
+    return count === 3? console.log(`Congratulations, ${userName}!`): console.log(`Let's try again, ${userName}!`);
 }
 
