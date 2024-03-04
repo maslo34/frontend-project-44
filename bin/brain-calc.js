@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import calculator from '../src/calc.js';
+import calculator from '../src/games/calc.js';
 
 calculator();

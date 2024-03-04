@@ -1,7 +1,7 @@
 
-import greetings from '../src/cli.js';
+import greetings from './cli.js';
 import _ from 'lodash';
-import { logic } from './index.js';
+import { logic } from '../index.js';
 
 
 
