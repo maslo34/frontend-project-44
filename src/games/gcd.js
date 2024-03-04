@@ -19,8 +19,8 @@ export default () => {
     let count = 0;
     for ( let i = 0; i < 3; i +=1) {
 
-        const firstNumber = _.random(100);
-        const secondNumber = _.random(100);
+        const firstNumber = _.random(1, 100);
+        const secondNumber = _.random(1, 100);
         const ques = `${firstNumber} ${secondNumber}`;
         const result = nod(firstNumber, secondNumber);
         const userAnsw = logic(ques, result);
