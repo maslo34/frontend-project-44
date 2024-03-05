@@ -1,13 +1,13 @@
-import _ from "lodash";
-import { logic } from "../index.js";
-import greetings from "./cli.js";
+import _ from 'lodash';
+import { logic } from '../index.js';
+import greetings from './cli.js';
 
-const matSymbol = ["*", "-", "+"];
+const matSymbol = ['*', '-', '+'];
 
 const calsSymbol = (number1, number2, char) => {
-  if (matSymbol[char] === "*") {
+  if (matSymbol[char] === '*') {
     return number1 * number2;
-  } else if (matSymbol[char] === "-") {
+  } else if (matSymbol[char] === '-') {
     return number1 - number2;
   } else {
     return number1 + number2;
@@ -16,7 +16,7 @@ const calsSymbol = (number1, number2, char) => {
 
 export default () => {
   const userName = greetings();
-  console.log("What is the result of the expression?");
+  console.log('What is the result of the expression?');
   let count = 0;
   for (let i = 0; i < 3; i += 1) {
     const firstNumber = _.random(100);
@@ -27,7 +27,7 @@ export default () => {
     const userAnsw = logic(ques, result);
     if (userAnsw === true) {
       count += 1;
-      console.log("Correct!");
+      console.log('Correct!');
     } else {
       break;
     }

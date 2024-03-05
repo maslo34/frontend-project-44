@@ -1,6 +1,6 @@
-import _ from "lodash";
-import { logic } from "../index.js";
-import greetings from "./cli.js";
+import _ from 'lodash';
+import { logic } from '../index.js';
+import greetings from './cli.js';
 
 const primeNumber = (char) => {
   let count = 0;
@@ -9,7 +9,7 @@ const primeNumber = (char) => {
       count += 1;
     }
   }
-  return count === 2 ? "yes" : "no";
+  return count === 2 ? 'yes' : 'no';
 };
 
 export default () => {
@@ -22,7 +22,7 @@ export default () => {
     const userAnsw = logic(ques, result);
     if (userAnsw === true) {
       countAnswer += 1;
-      console.log("Correct!");
+      console.log('Correct!');
     } else {
       break;
     }

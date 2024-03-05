@@ -1,15 +1,16 @@
-import _ from "lodash";
-import { logic } from "../index.js";
-import greetings from "./cli.js";
+import _ from 'lodash';
+import { logic } from '../index.js';
+import greetings from './cli.js';
 
 const nod = (firstNumber, secondNumber) => {
   let result = 0;
   const maxNumber = Math.max(firstNumber, secondNumber);
   if (
-    Math.min(firstNumber, secondNumber) === 0 ||
-    firstNumber === secondNumber
+    Math.min(firstNumber, secondNumber) === 0
+    || firstNumber === secondNumber
   ) {
-    return (result = maxNumber);
+    result = maxNumber;
+    return result;
   }
   for (let i = 0; i < maxNumber; i += 1) {
     if (firstNumber % i === 0 && secondNumber % i === 0) {
@@ -21,7 +22,7 @@ const nod = (firstNumber, secondNumber) => {
 
 export default () => {
   const userName = greetings();
-  console.log("Find the greatest common divisor of given numbers.");
+  console.log('Find the greatest common divisor of given numbers.');
   let count = 0;
   for (let i = 0; i < 3; i += 1) {
     const firstNumber = _.random(100);
@@ -31,7 +32,7 @@ export default () => {
     const userAnsw = logic(ques, result);
     if (userAnsw === true) {
       count += 1;
-      console.log("Correct!");
+      console.log('Correct!');
     } else {
       break;
     }
