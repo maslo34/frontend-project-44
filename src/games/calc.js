@@ -7,10 +7,11 @@ const matSymbol = ['*', '-', '+'];
 const calsSymbol = (number1, number2, char) => {
   if (matSymbol[char] === '*') {
     return number1 * number2;
-  } else if (matSymbol[char] === '-') {
+  }
+  if (matSymbol[char] === '-') {
     return number1 - number2;
-  } 
-    return number1 + number2;
+  }
+  return number1 + number2;
 };
 
 export default () => {

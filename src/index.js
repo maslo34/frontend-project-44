@@ -6,6 +6,6 @@ export default (ques, result) => {
   if (userAnsw == result) {
     return true;
   }
-    console.log(`'${userAnsw}' is wrong answer ;(. Correct answer was '${result}'.`);
-    return false;
+  console.log(`'${userAnsw}' is wrong answer ;(. Correct answer was '${result}'.`);
+  return false;
 };
