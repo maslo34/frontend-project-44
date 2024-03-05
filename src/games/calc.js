@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { logic } from '../index.js';
+import logic from '../index.js';
 import greetings from './cli.js';
 
 const matSymbol = ['*', '-', '+'];
@@ -9,9 +9,8 @@ const calsSymbol = (number1, number2, char) => {
     return number1 * number2;
   } else if (matSymbol[char] === '-') {
     return number1 - number2;
-  } else {
+  } 
     return number1 + number2;
-  }
 };
 
 export default () => {

@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { logic } from '../index.js';
+import logic from '../index.js';
 import greetings from './cli.js';
 
 const nod = (firstNumber, secondNumber) => {
