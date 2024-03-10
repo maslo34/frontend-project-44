@@ -1,33 +1,28 @@
 import _ from 'lodash';
-import logic from '../index.js';
-import greetings from './cli.js';
+import getResultAnswer from '../index.js';
 
-const primeNumber = (char) => {
-  let count = 0;
-  for (let i = 0; i <= char; i += 1) {
-    if (char % i === 0) {
-      count += 1;
+const primeNumber = (number) => {
+  if (number <= 1) {
+    return false;
+  }
+  const initialValue = 2;
+  for (let i = initialValue; i <= number / 2; i += 1) {
+    if (number % i === 0) {
+      return false;
     }
   }
-  return count === 2 ? 'yes' : 'no';
+  return true;
+};
+
+const gameTask =
+  'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+const getQuestionAndAnswer = () => {
+  const ques = _.random(1, 50);
+  const result = primeNumber(ques) ? 'yes' : 'no';
+  return [ques, result];
 };
 
 export default () => {
-  const userName = greetings();
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  let countAnswer = 0;
-  for (let i = 0; i < 3; i += 1) {
-    const ques = _.random(1, 50);
-    const result = primeNumber(ques);
-    const userAnsw = logic(ques, result);
-    if (userAnsw === true) {
-      countAnswer += 1;
-      console.log('Correct!');
-    } else {
-      break;
-    }
-  }
-  return countAnswer === 3
-    ? console.log(`Congratulations, ${userName}!`)
-    : console.log(`Let's try again, ${userName}!`);
+  getResultAnswer(gameTask, getQuestionAndAnswer);
 };
