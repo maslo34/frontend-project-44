@@ -7,8 +7,8 @@ const nod = (firstNumber, secondNumber) => {
   let result = 0;
   const maxNumber = Math.max(firstNumber, secondNumber);
   if (
-    Math.min(firstNumber, secondNumber) === 0 ||
-    firstNumber === secondNumber
+    Math.min(firstNumber, secondNumber) === 0
+    || firstNumber === secondNumber
   ) {
     result = maxNumber;
     return result;

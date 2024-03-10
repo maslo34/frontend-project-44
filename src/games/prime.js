@@ -14,8 +14,7 @@ const primeNumber = (number) => {
   return true;
 };
 
-const gameTask =
-  'Answer "yes" if given number is prime. Otherwise answer "no".';
+const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const getQuestionAndAnswer = () => {
   const ques = _.random(1, 50);
