@@ -14,10 +14,14 @@ const primeNumber = (number) => {
   return true;
 };
 
+const getRandomNumber = (value1, value2) => {
+  return _.random(value1, value2);
+}
+
 const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const getQuestionAndAnswer = () => {
-  const ques = _.random(1, 50);
+  const ques = getRandomNumber(1, 50);
   const result = primeNumber(ques) ? 'yes' : 'no';
   return [ques, result];
 };

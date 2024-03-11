@@ -21,9 +21,13 @@ const nod = (firstNumber, secondNumber) => {
   return result;
 };
 
+const getRandomNumber = (value) => {
+  return _.random(value);
+}
+
 const getQuestionAndAnswer = () => {
-  const firstNumber = _.random(100);
-  const secondNumber = _.random(100);
+  const firstNumber = getRandomNumber(100);
+  const secondNumber = getRandomNumber(100);
   const ques = `${firstNumber} ${secondNumber}`;
   const result = nod(firstNumber, secondNumber);
   return [ques, String(result)];

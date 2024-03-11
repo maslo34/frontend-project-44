@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import getResultAnswer from '../index.js';
 
-const matSymbol = ['*', '-', '+'];
+const matSymbol = ['*', '-', '+', '/'];
 const gameTask = 'What is the result of the expression?';
 
 const calcResult = (number1, number2, char) => {
@@ -10,15 +10,25 @@ const calcResult = (number1, number2, char) => {
       return number1 + number2;
     case '-':
       return number1 - number2;
-    default:
+    case '*':
       return number1 * number2;
+    default:
+        throw "Неверно указан знак";
   }
 };
 
+const getRandomNumber = (value) => {
+    return _.random(value);
+}
+
+const getRandomSymbol = (value) => {
+    return _.random(value);
+}
+
 const getQuestionAndAnswer = () => {
-  const firstNumber = _.random(100);
-  const secondNumber = _.random(20);
-  const randomSymbol = _.random(2);
+  const firstNumber = getRandomNumber(100);
+  const secondNumber = getRandomNumber(100);
+  const randomSymbol = getRandomSymbol(2);
   const randomChar = matSymbol[randomSymbol];
   const ques = `${firstNumber} ${randomChar} ${secondNumber}`;
   const result = calcResult(firstNumber, secondNumber, randomChar);
