@@ -12,6 +12,8 @@ const calcResult = (number1, number2, char) => {
       return number1 - number2;
     case '*':
       return number1 * number2;
+    default:
+      throw Error;
   }
 };
 
