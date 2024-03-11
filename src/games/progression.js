@@ -1,10 +1,7 @@
 import _ from 'lodash';
 import getResultAnswer from '../index.js';
 
-
-const getRandomNumber = (value1, value2) => {
-  return _.random(value1, value2);
-}
+const getRandomNumber = (value1, value2) => {return _.random(value1, value2)};
 
 const getProgression = (lergthProgression, stepSize) => {
   let numberProgression = getRandomNumber(100);
