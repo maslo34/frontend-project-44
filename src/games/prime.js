@@ -14,7 +14,7 @@ const primeNumber = (number) => {
   return true;
 };
 
-const getRandomNumber = (value1, value2) => {return _.random(value1, value2)};
+const getRandomNumber = (value1, value2) =>  _.random(value1, value2);
 
 const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 

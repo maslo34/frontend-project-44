@@ -12,12 +12,10 @@ const calcResult = (number1, number2, char) => {
       return number1 - number2;
     case '*':
       return number1 * number2;
-    default:
-      break;
   }
 };
 
-const getRandomNumber = (value) => {return _.random(value)};
+const getRandomNumber = (value) => _.random(value);
 
 const getQuestionAndAnswer = () => {
   const firstNumber = getRandomNumber(100);

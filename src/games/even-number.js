@@ -3,7 +3,7 @@ import getResultAnswer from '../index.js';
 
 const gameTask = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const getRandomNumber = (value) => {return _.random(value)};
+const getRandomNumber = (value) => _.random(value);
 
 const evenNumber = (num) => num % 2 === 0;
 const getQuestionAndAnswer = () => {

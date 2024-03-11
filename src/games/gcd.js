@@ -21,7 +21,7 @@ const nod = (firstNumber, secondNumber) => {
   return result;
 };
 
-const getRandomNumber = (value) => {return _.random(value)};
+const getRandomNumber = (value) => _.random(value);
 
 const getQuestionAndAnswer = () => {
   const firstNumber = getRandomNumber(100);
